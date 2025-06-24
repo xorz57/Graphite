@@ -12,7 +12,7 @@ public:
   static void Unbind();
   void SetVertexAttribPointer(GLuint index, GLint size, GLenum type, GLboolean normalized, GLsizei stride,
                               const void *pointer) const;
-  GLuint GetID() const;
+  [[nodiscard]] GLuint GetID() const;
 
 private:
   GLuint m_ID{};

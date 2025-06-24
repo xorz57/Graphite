@@ -13,7 +13,7 @@ public:
   virtual void OnUpdate(float deltaTime) = 0;
   virtual void OnRenderUI() = 0;
   void SetName(const std::string name);
-  const std::string &GetName() const;
+  [[nodiscard]] const std::string &GetName() const;
 
 private:
   std::string m_Name;

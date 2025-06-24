@@ -17,7 +17,7 @@ public:
     const GLsizeiptr size{static_cast<GLsizeiptr>(vertices.size() * sizeof(T))};
     glBufferData(GL_ARRAY_BUFFER, size, vertices.data(), usage);
   }
-  GLuint GetID() const;
+  [[nodiscard]] GLuint GetID() const;
 
 private:
   GLuint m_ID{};

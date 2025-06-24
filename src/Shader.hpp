@@ -27,10 +27,10 @@ public:
   void SetMat4(std::string_view name, const glm::mat4 &m) const;
 
 private:
-  std::string LoadShader(const std::string_view path) const;
-  GLuint Compile(GLenum type, const std::string_view sv) const;
-  GLuint Link(GLuint vShader, GLuint fShader) const;
-  GLint GetUniformLocation(const std::string_view name) const;
+  [[nodiscard]] std::string LoadShader(const std::string_view path) const;
+  [[nodiscard]] GLuint Compile(GLenum type, const std::string_view sv) const;
+  [[nodiscard]] GLuint Link(GLuint vShader, GLuint fShader) const;
+  [[nodiscard]] GLint GetUniformLocation(const std::string_view name) const;
 
   const std::string_view m_VShaderPath;
   const std::string_view m_FShaderPath;
