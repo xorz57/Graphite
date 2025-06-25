@@ -10,7 +10,7 @@ endif ()
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
-project(graphite LANGUAGES CXX)
+project(Graphite LANGUAGES CXX)
 
 find_package(glad REQUIRED)
 find_package(glfw3 REQUIRED)

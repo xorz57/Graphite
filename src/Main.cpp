@@ -31,7 +31,7 @@ int main() {
 
   glfwWindowHint(GLFW_SAMPLES, 8);
 
-  GLFWwindow *window{glfwCreateWindow(800, 600, "graphite", nullptr, nullptr)};
+  GLFWwindow *window{glfwCreateWindow(800, 600, "Graphite", nullptr, nullptr)};
   if (window == nullptr) {
     glfwTerminate();
     std::exit(EXIT_FAILURE);

@@ -62,7 +62,11 @@ void ExampleLayer::OnUpdate(float deltaTime) {
   m_Camera.Update(deltaTime);
 
   const double t{glfwGetTime()};
-  m_Light.position = glm::vec3(4.0f * glm::sin(static_cast<float>(t)), 4.0f, 4.0f * glm::cos(static_cast<float>(t)));
+  float light_radius{4.0f};
+  float light_x{light_radius * glm::sin(static_cast<float>(t))};
+  float light_y{light_radius};
+  float light_z{light_radius * glm::cos(static_cast<float>(t))};
+  m_Light.position = glm::vec3(light_x, light_y, light_z);
 
   m_LightShader->Use();
 

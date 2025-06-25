@@ -31,7 +31,8 @@ private:
       glm::vec3(1.0f, 1.0f, 1.0f),
       glm::vec3(1.0f, 1.0f, 1.0f),
       glm::vec3(1.0f, 1.0f, 1.0f),
-  };
+      glm::vec3(1.0f, 1.0f, 1.0f),
+    };
   Material m_Material{
       glm::vec3(0.25f, 0.25f, 0.75f),
       glm::vec3(0.25f, 0.25f, 0.75f),
