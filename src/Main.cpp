@@ -1,7 +1,7 @@
 /// @author Georgios Fotopoulos
 
-#include <cstdio>
 #include <cstdlib>
+#include <print>
 
 #include <glm/glm.hpp>
 #include <glm/gtc/type_ptr.hpp>
@@ -14,7 +14,7 @@
 #include "UILayer.hpp"
 
 static void ErrorCallback(const int error, const char *description) {
-  std::printf("Error Code %d: %s\n", error, description);
+  std::println("Error Code {}: {}", error, description);
 }
 
 int main() {
@@ -47,11 +47,11 @@ int main() {
     std::exit(EXIT_FAILURE);
   }
 
-  std::printf("OpenGL Vendor: %s\n", reinterpret_cast<const char *>(glGetString(GL_VENDOR)));
-  std::printf("OpenGL Renderer: %s\n", reinterpret_cast<const char *>(glGetString(GL_RENDERER)));
-  std::printf("OpenGL Version: %s\n", reinterpret_cast<const char *>(glGetString(GL_VERSION)));
-  std::printf("OpenGL Shading Language Version: %s\n",
-              reinterpret_cast<const char *>(glGetString(GL_SHADING_LANGUAGE_VERSION)));
+  std::println("OpenGL Vendor: {}", reinterpret_cast<const char *>(glGetString(GL_VENDOR)));
+  std::println("OpenGL Renderer: {}", reinterpret_cast<const char *>(glGetString(GL_RENDERER)));
+  std::println("OpenGL Version: {}", reinterpret_cast<const char *>(glGetString(GL_VERSION)));
+  std::println("OpenGL Shading Language Version: {}",
+               reinterpret_cast<const char *>(glGetString(GL_SHADING_LANGUAGE_VERSION)));
 
   glEnable(GL_DEPTH_TEST);
   glEnable(GL_MULTISAMPLE);

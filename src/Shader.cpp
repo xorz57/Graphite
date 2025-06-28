@@ -3,7 +3,7 @@
 #include "Shader.hpp"
 
 #include <fstream>
-#include <iostream>
+#include <print>
 #include <sstream>
 #include <vector>
 
@@ -27,7 +27,6 @@ void Shader::Use() const { glUseProgram(m_Program); }
 std::string Shader::LoadShader(const std::string_view path) const {
   std::ifstream ifs(path.data());
   if (!ifs) {
-    std::cerr << "Failed to open shader file: " << path << '\n';
     std::exit(EXIT_FAILURE);
   }
 
@@ -49,8 +48,7 @@ GLuint Shader::Compile(GLenum type, const std::string_view sv) const {
     glGetShaderiv(shader, GL_INFO_LOG_LENGTH, &info_log_length);
     std::vector<char> log(static_cast<std::size_t>(info_log_length));
     glGetShaderInfoLog(shader, info_log_length, nullptr, log.data());
-    std::cerr << (type == GL_VERTEX_SHADER ? "Vertex" : "Fragment") << " shader compilation failed:\n"
-              << log.data() << '\n';
+    std::println("{}", log.data());
     std::exit(EXIT_FAILURE);
   }
 
@@ -70,7 +68,7 @@ GLuint Shader::Link(GLuint vertexShader, GLuint fragmentShader) const {
     glGetProgramiv(program, GL_INFO_LOG_LENGTH, &info_log_length);
     std::vector<char> log(static_cast<std::size_t>(info_log_length));
     glGetProgramInfoLog(program, info_log_length, nullptr, log.data());
-    std::cerr << "Shader program linking failed:\n" << log.data() << '\n';
+    std::println("{}", log.data());
     std::exit(EXIT_FAILURE);
   }
 
