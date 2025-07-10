@@ -13,8 +13,6 @@
 #include <imgui_impl_glfw.h>
 #include <imgui_impl_opengl3.h>
 
-#include <implot.h>
-
 UILayer::UILayer() : Layer("UILayer") {}
 
 void UILayer::OnAttach() {
@@ -26,7 +24,6 @@ void UILayer::OnAttach() {
 
   IMGUI_CHECKVERSION();
   ImGui::CreateContext();
-  ImPlot::CreateContext();
   ImGuiIO &io{ImGui::GetIO()};
   (void)io;
   io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;
@@ -49,7 +46,6 @@ void UILayer::OnAttach() {
 void UILayer::OnDetach() {
   ImGui_ImplOpenGL3_Shutdown();
   ImGui_ImplGlfw_Shutdown();
-  ImPlot::DestroyContext();
   ImGui::DestroyContext();
 }
 

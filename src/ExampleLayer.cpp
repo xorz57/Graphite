@@ -15,8 +15,6 @@
 #include <imgui_impl_glfw.h>
 #include <imgui_impl_opengl3.h>
 
-#include <implot.h>
-
 ExampleLayer::ExampleLayer() : Layer("ExampleLayer") {
   m_Camera.SetPosition(glm::vec3(0.0f, 0.0f, 10.0f));
 

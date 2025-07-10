@@ -5,8 +5,11 @@
     "glm",
     {
       "name": "imgui",
-      "features": ["docking-experimental", "glfw-binding", "opengl3-binding"]
-    },
-    "implot"
+      "features": [
+        "docking-experimental",
+        "glfw-binding",
+        "opengl3-binding"
+      ]
+    }
   ]
 }

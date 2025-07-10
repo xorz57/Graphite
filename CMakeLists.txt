@@ -16,7 +16,6 @@ find_package(glad REQUIRED)
 find_package(glfw3 REQUIRED)
 find_package(glm REQUIRED)
 find_package(imgui REQUIRED)
-find_package(implot REQUIRED)
 
 add_executable(${PROJECT_NAME}
     src/Camera.cpp
@@ -36,7 +35,6 @@ target_link_libraries(${PROJECT_NAME} PRIVATE glad::glad)
 target_link_libraries(${PROJECT_NAME} PRIVATE glfw)
 target_link_libraries(${PROJECT_NAME} PRIVATE glm::glm)
 target_link_libraries(${PROJECT_NAME} PRIVATE imgui::imgui)
-target_link_libraries(${PROJECT_NAME} PRIVATE implot::implot)
 
 include(StrictWarnings)
 
